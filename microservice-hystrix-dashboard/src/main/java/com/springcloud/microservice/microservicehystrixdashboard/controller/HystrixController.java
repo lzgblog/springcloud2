@@ -12,12 +12,12 @@ import org.springframework.web.bind.annotation.RestController;
 public class HystrixController {
 
     @RequestMapping("/hello")
-    @HystrixCommand(fallbackMethod = "Demo")
+    @HystrixCommand(fallbackMethod = "demo")
     public String getDemo(){
         return "hello world";
     }
 
-    public String Demo(){
+    public String demo(){
         return "hystrixCommand";
     }
 }

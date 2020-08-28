@@ -33,7 +33,7 @@
     </dependencyManagement>
 
     <dependencies>
-        <!--Spring Cloud Config 依赖-->
+        <!--Spring Cloud Config 客户端依赖-->
         <dependency>
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-config-client</artifactId>
