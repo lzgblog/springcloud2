@@ -1,0 +1,4 @@
+# http://localhost:9001/hystrix
+# http://localhost:9001/hystrix.stream
+server:
+  port: 9001

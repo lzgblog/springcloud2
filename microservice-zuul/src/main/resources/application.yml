@@ -1,0 +1,30 @@
+server:
+  port: 9002
+
+spring:
+  application:
+    name: microservice-zuul
+
+eureka:
+  client:
+    service-url:
+      #defaultZone: http://eureka7001.com:7001/eureka,http://eureka7002.com:7002/eureka,http://eureka7003.com:7003/eureka
+      defaultZone: http://localhost:7001/eureka
+  instance:
+    instance-id: microservice-zuul #zuul注册到eureka的ID
+    prefer-ip-address: true #显示ip地址
+
+
+zuul:
+  prefix: /api #请求地址前缀  如http://localhost:9002/api/mydept/find/1
+  ignored-services: "*" #旧名称忽略 不可用 如原可以用地址：http://localhost:9002/api/microservice-provider/find/1
+  routes:
+    mydept.serviceId: microservice-provider #映射注册的微服务应用名称
+    mydept.path: /mydept/** #代理的地址
+
+#点击eureka的id后显示的信息
+info:
+  app.name: atguigu-microcloud
+  company.name: www.atguigu.com
+  build.artifactId: $project.artifactId$
+  build.version: $project.version$
